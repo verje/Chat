@@ -1,0 +1,14 @@
+{% extends "chat/base.html" %}
+{% load static %}
+
+{% block content %}
+<h2 id="username">{{username}}</h2>
+<form id="chatform" onSubmit="return OnSubmitForm();">
+    {% csrf_token %}
+    <label><b>Write</b></label>
+    <input id="message" type="text" placeholder="Enter your message to the bot" name="message" size="100" required>
+    <button type="submit">Message</button>
+    <h3>Chat</h3>
+    <div id="chat"></div>
+</form>
+{% endblock %}

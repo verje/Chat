@@ -1,0 +1,140 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+
+}
+h1{
+    color: #ffffff;
+    text-decoration: underline;
+}
+[class*="col-"]{
+    float: left;
+    /*border: 1px solid red;*/
+}
+.contenedor{
+    position: relative;
+    margin: auto;
+    height: auto;
+}
+.row{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    clear: both;
+    display: table;
+}
+.row-flex{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    clear: both;
+    display: flex;
+}
+.align-content-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-12{
+    width: 100%;
+}
+.col-11{
+    width: 91.66666667%;
+}
+.col-10{
+    width: 83.33333333%;
+}
+.col-9{
+    width: 75%;
+}
+.col-8{
+    width: 66.66666667%;
+}
+.col-7{
+    width: 58.33333333%;
+}
+.col-6{
+    width: 50%;
+}
+.col-5{
+    width: 41.66666667%;
+}
+.col-4{
+    width: 33.33333333%;
+}
+.col-3{
+    width: 25%;
+}
+.col-2{
+    width: 16.66666667%;
+}
+.col-1{
+    width: 8.33333333%;
+}
+
+button:hover{
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: rgb(87, 109, 170);
+    transition: all 0.2s ease;
+}
+
+.boton{
+    display:inline-block;
+    width: 100%;
+    border: none;
+    color: white;
+    transition: all 0.15s; 
+    background-color: #5D81B5;
+    padding: 0.3rem;   
+}
+.boton-send{
+    display: block;
+    width: 100%;
+    padding: 2px 12px 2px 12px; 
+    border: none;
+    color: white;
+    transition: all 0.15s; 
+    background-color: #5D81B5;
+}
+
+
+p, a{
+    color: white;
+    font-size: x-small;
+}
+
+input[text]{
+    background-color: white;
+    outline: 1px solid rgb(113, 113, 145);
+    width: 100%;
+    text-align: center;
+    border: none;
+}
+input:focus{
+    outline: 2px solid rgb(199, 199, 245);
+}
+
+label{
+    font-size: small;
+    color: white;
+}
+
+.cabecera{
+    padding: 1rem;
+    background-color: #5D81B5;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.logout:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

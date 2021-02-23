@@ -1,0 +1,51 @@
+{% extends "chat/base.html" %}
+
+{% block content %}
+<div class="contenedor col-12 align-content-center">
+
+    <div class="col-4 border-table">
+
+        <div class="col-12"> 
+            <div class="align-content-center col-12" style="background-color: #9AB0D7; padding: 3rem;">
+            <H1>Register</H1>
+            </div>
+
+            <div class="align-content-center col-12" style="background-color: #9AB0D7;">
+                <form id="form-login" method="post" action="" class="col-8">
+                    {% csrf_token %}
+                    <div class="row" style="margin-bottom: 0.5rem;">
+                        <div class="col-12 align-content-center"><label for="">Username</label></div>
+                        <div class="col-12 align-content-center"><input type="text" placeholder="Enter Username" name="username" required></div>
+                    </div>
+
+                    <div class="row" style="margin-bottom: 0.5rem;">
+                        <div class="col-12 align-content-center"><label for="">Email</label></div>
+                        <div class="col-12 align-content-center"><input type="email" placeholder="Enter Email" name="email" required></div>
+                    </div>
+
+                    <div class="row" style="margin-bottom: 0.5rem;">
+                        <div class="col-12 align-content-center"><label for="">First Name</label></div>
+                        <div class="col-12 align-content-center"><input type="text" placeholder="Enter First Name" name="first_name" required></div>
+                    </div>
+
+                    <div class="row" style="margin-bottom: 0.5rem;">
+                        <div class="col-12 align-content-center"><label for="">Last Name</label></div>
+                        <div class="col-12 align-content-center"><input type="text" placeholder="Enter Last Name" name="last_name" required></div>
+                    </div>
+
+                    <div class="row" style="margin-bottom: 2rem;">
+                        <div class="col-12 align-content-center"><label for="">Password</label></div>
+                        <div class="col-12 align-content-center"><input type="password" placeholder="Enter Password" name="password" required></div>
+                    </div>
+                    <div class="row" style="margin-bottom: 3rem;">
+                        <div class="col-12"><button class="boton"
+                                type="submit">Register</button>
+                        </div>
+                    </div>
+                 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

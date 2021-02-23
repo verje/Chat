@@ -1,0 +1,56 @@
+{% extends "chat/base.html" %}
+
+{% block content %}
+<div class="contenedor col-12 align-content-center">
+
+    <div class="col-4 border-table">
+
+        <div id="div-mensajes" class="col-12 p-7" style="background-color: rgb(207, 146, 146); text-align: center;">
+            {% if form.errors %}
+            <p style="color: white;">user o password incorrect. Pleas Try again</p>
+            {% endif %}
+
+            {% if next %}
+            {% if user.is_authenticated %}
+            <p style="color: white;">Login first to Chat</p>
+            {% else %}
+            <p style="color: white;">Login first to Chat</p>
+            {% endif %}
+            {% endif %}
+        </div>
+
+
+        <div class="col-12"> 
+            <div class="align-content-center col-12" style="background-color: #9AB0D7; padding: 3rem;">
+            <H1>Sign in</H1>
+            </div>
+
+            <div class="align-content-center col-12" style="background-color: #9AB0D7;">
+                <form id="form-login" method="post" action="" class="col-8">
+                    {% csrf_token %}
+                    <div class="row" style="margin-bottom: 0.5rem;">
+                        <div class="col-12 align-content-center"><label for="">Username</label></div>
+                        <div class="col-12 align-content-center"><input type="text" placeholder="Enter Username" name="username" required></div>
+                    </div>
+                    <div class="row" style="margin-bottom: 2rem;">
+                        <div class="col-12 align-content-center"><label for="">Password</label></div>
+                        <div class="col-12 align-content-center"><input type="password" placeholder="Enter Password" name="password" required></div>
+                    </div>
+                    <div class="row" style="margin-bottom: 2rem;">
+                        <div class="col-12 align-content-center"><label for="">Chat Room</label></div>
+                        <div class="col-12 align-content-center"><input type="text" placeholder="Type any Chat Room" name="room_name" required></div>
+                    </div>
+                    <div class="row" style="margin-bottom: 2rem;">
+                        <div class="col-12"><button class="boton"
+                                type="submit">Login</button>
+                        </div>
+                    </div>
+                    <div class="row align-content-center" style="margin-bottom: 3rem;">
+                        <p><span style="color: #5D81B5;">Not registred? </span> &nbsp; <a href="{% url 'create-user' %}">Create an account!</a></p>
+                    </div>                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

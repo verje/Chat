@@ -1,0 +1,43 @@
+{% load static %}
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Chat Room - JobSity Challence</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}" />
+</head>
+
+<body>
+  <div class="contenedor">
+    
+    <div class="row cabecera" style="margin-bottom: 3rem;">
+        <div class="row-flex">
+              <div class="col-11"><i class="fa fa-comments-o fa-5x" aria-hidden="true" style="color: white;"></i></div>
+              <div class="col-1 align-content-center">
+                  <div class="row">
+                    {% if user.is_authenticated %}
+                      <h1>{{ user.get_username }}</h1>
+                      <div class="row align-content-center">
+                          <a href="{% url 'logout' %}">Logout</a>
+                      </div>
+                    {% endif %}
+                  </div>
+
+                  
+              </div>
+        </div>
+    </div>
+
+    <div class="row">
+      {% block content %} {% endblock %}
+    </div>
+
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+</html>
