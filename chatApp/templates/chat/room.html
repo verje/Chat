@@ -40,8 +40,11 @@
         );
 
         chatSocket.onmessage = function(e) {
+            console.log(e);
+            const ts = Date(e.timeStamp);
+            var timeStamp = ts.slice(4,21);
             const data = JSON.parse(e.data);
-            document.querySelector('#chat-log').value += (data.message + '\n');
+            document.querySelector('#chat-log').value += (data.sender + "(" + timeStamp + ")" + '\n' + data.message + '\n');
         };
 
         chatSocket.onclose = function(e) {
@@ -59,9 +62,10 @@
             const messageInputDom = document.querySelector('#chat-message-input');
             var sender = document.getElementById("getusername").value
             const message = messageInputDom.value;
-            var todayDate = new Date().toISOString().slice(0,19);
-            chatSocket.send(JSON.stringify({
-                'message': sender + "(" + todayDate + ")\n" + ">>"+ message + "\n"
+            chatSocket.send(JSON.stringify({ //construct event.data
+                'message': message,
+                'sender': sender,
+                'command': 'fetch_messages'
             }));
             messageInputDom.value = '';
         };
